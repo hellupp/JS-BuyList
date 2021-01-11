@@ -1,21 +1,84 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background: #cdcbcb;
+	margin: 0;
+	font-family: Arial, serif;
+}
+
 .bl-background {
 	background: #cdcbcb;
-	padding: 20px;
+	padding-top: 100px;
+	margin-left: 100px;
+	margin-right: 100px;
 }
 
 .bl-list {
 	background: white;
-	margin-bottom: 10px;
+	width: 300px;
+	padding: 10px;
+	margin: 12px;
+	display: inline-block;
 }
 
 .bl-bought {
 	background: white;
+	padding: 10px;
+	margin: 12px;
+	display: inline-block;
 }
 
-/*Buttons*/
-.bl-label {
-	background: #cdcbcb;
+.bl-product1, .bl-product2, .bl-product3 {
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
-.bl-plus {
+
+.bl-search {
+	padding: 7px;
+}
+input {
+	padding: 5px;
+}
+.bl-search-button {
+	background: cornflowerblue;
+	color: #ffffff;
+	padding: 4px;
+	margin: 0;
+}
+
+.product1-cross, .product2-cross, .product3-cross {
+	background: red;
+	display: inline;
+}
+.product1-minus, .product2-minus, .product3-minus {
+	background: red;
+	display: inline;
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+}
+
+.product1-plus, .product2-plus, .product3-plus {
 	background: #04a613;
+	display: inline;
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
 }
+
+.product1-name, .product1-count, .product1-buttons {
+	display: inline;
+	padding: 10px;
+}
+.product2-name, .product2-count, .product2-buttons {
+	display: inline;
+	padding: 10px;
+}
+.product3-name, .product3-count, .product3-buttons {
+	display: inline;
+	padding: 10px;
+}
+
