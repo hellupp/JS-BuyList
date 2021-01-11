@@ -1,21 +1,17 @@
-.bl-background {
-	background: #cdcbcb;
-	padding: 20px;
+.product-item {
+	background-color: gray;
+	display: inline-block;
+	height: 25px;
+	padding: 5px;
+	border-radius: 5px;
 }
 
-.bl-list {
-	background: white;
-	margin-bottom: 10px;
-}
-
-.bl-bought {
-	background: white;
-}
-
-/*Buttons*/
-.bl-label {
-	background: #cdcbcb;
-}
-.bl-plus {
-	background: #04a613;
+.amount {
+	background-color: yellow;
+	border-radius: 10px;
+	
+	display: inline-block;
+	height: 20px;
+	width: 20px;
+	text-align: center;
 }
