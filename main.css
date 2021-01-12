@@ -6,28 +6,43 @@
 body{
 	background: #cdcbcb;
 	font-family: Arial, serif;
+	min-width: 350px;
 }
 
 .bl-background {
+	display: block;
 	background: #cdcbcb;
 	padding-top: 100px;
-	margin-left: 100px;
-	margin-right: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 990px;
+	max-width: 100%;
 }
+
 
 .bl-list {
 	background: white;
-	width: 520px;
-	padding: 10px;
-	margin: 12px;
+	width: 70%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin: 5px 5px 5px 0;
 	display: inline-block;
+	border: transparent;
+	border-radius: 5px;
+	box-shadow: 0 2px 4px 0 #b0b0b0, 0 2px 10px 0 #b0b0b0;
 }
 
 .bl-bought {
+	position: relative;
+	vertical-align: top;
 	background: white;
+	width: 20%;
 	padding: 10px;
-	margin: 12px;
+	float: right;
+	margin: 10px 0 10px 10px;
 	display: inline-block;
+	border-radius: 5px;
+	box-shadow: 0 2px 4px 0 #b0b0b0, 0 2px 10px 0 #b0b0b0;
 }
 
 .line {
@@ -37,32 +52,62 @@ body{
 .bl-product1, .bl-product2, .bl-product3 {
 	padding-top: 10px;
 	padding-bottom: 10px;
+	padding-left: 5px;
+}
+.bl-product3 {
+	padding-bottom: 5px;
 }
 
 .bl-search {
-	padding: 5px 10px 15px;
+	padding: 5px 15px 15px;
 }
 input {
-	width: 415px;
+	width: 70%;
 	height: 30px;
 	padding: 5px;
+	border-bottom-left-radius: 5px;
+	border-top-left-radius: 5px;
+	border: 1px solid #deddd8;
+	box-shadow: transparent;
+	border-right-color: transparent;
 }
 .bl-search-button {
 	background: cornflowerblue;
 	color: #ffffff;
+	font-size: 15px;
 	padding: 4px;
-	width: 70px;
-	height: 44px;
+	width: 27%;
+	height: 42px;
 	margin-left: -5px;
+	border-bottom-right-radius: 5px;
+	border-top-right-radius: 5px;
+	border: 1px solid transparent;
+	box-shadow: 0 -3px 0 0 #5987d6 inset;
+	transition-duration: 0.4s;
+	cursor: pointer;
+}
+.bl-search-button:hover {
+	background-color: #5588db;
+	box-shadow: 0 -3px 0 0 #5582c8 inset;
 }
 
 .product1-cross, .product2-cross, .product3-cross {
-	background: #ff5c4f;
+	background: #ed3e1e;
 	display: inline;
 	color: white;
-	width: 25px;
-	height: 25px;
+	width: 30px;
+	height: 30px;
+	border-radius: 20%;
+	border: 1px solid transparent;
+	box-shadow: 0 -2px 0 0 #cf3c1b inset;
+	transition-duration: 0.4s;
+	cursor: pointer;
 }
+.product1-cross:hover, .product2-cross:hover, .product3-cross:hover {
+	background-color: #d73813;
+	box-shadow: 0 -3px 0 0 #b72b0f inset;
+}
+
 .product1-minus, .product2-minus, .product3-minus {
 	background: #ff5c4f;
 	color: white;
@@ -70,8 +115,16 @@ input {
 	border-radius: 50%;
 	width: 25px;
 	height: 25px;
-	margin-left: 19%;
+	border: 1px solid transparent;
+	box-shadow: 0 -2px 0 0 #d75347 inset;
+	/*transition-duration: 0.4s;*/
+	/*cursor: pointer;*/
+	opacity: 0.6;
 }
+/*.product1-minus:hover, .product2-minus:hover, .product3-minus:hover {*/
+/*	background-color: #ee4131;*/
+/*	box-shadow: 0 -3px 0 0 #dd3f31 inset;*/
+/*}*/
 
 .product1-plus, .product2-plus, .product3-plus {
 	background: #09c401;
@@ -80,27 +133,51 @@ input {
 	border-radius: 50%;
 	width: 25px;
 	height: 25px;
+	border: 1px solid transparent;
+	box-shadow: 0 -2px 0 0 #099e01 inset;
+	transition-duration: 0.4s;
+	cursor: pointer;
+}
+.product1-plus:hover, .product2-plus:hover, .product3-plus:hover {
+	background-color: #0ea90b;
+	box-shadow: 0 -3px 0 0 #149413 inset;
 }
 
 .product1-name, .product1-count, .product1-buttons, .product2-name, .product2-count, .product2-buttons, .product3-name, .product3-count, .product3-buttons {
-	display: inline;
-	padding: 10px;
+	display: inline-block;
+	padding: 0 10px;
+	text-align: center;
+	justify-content: center;
+	position: relative;
+}
+.product1-name, .product2-name, .product3-name {
+	width: 25%;
+	text-align: left;
+}
+.product1-count, .product2-count, .product3-count {
+	width: 30.5%;
+}
+.product1-buttons, .product2-buttons, .product3-buttons {
+	width: 30.5%;
+	text-align: right;
+	padding-right: 10px;
 }
 
 .product1-bought-button, .product2-bought-button, .product3-bought-button {
-	margin-left: 20%;
-	height: 25px;
-	width: 60px;
+	height: 30px;
+	width: 65px;
+	border-radius: 10%;
+	border: 1px solid transparent;
+	box-shadow: 0 0 0 0.5px #cdcbcb inset, 0 -2px 0 0 #cdcbcb inset;
+	transition-duration: 0.4s;
+	cursor: pointer;
 }
-.product2-minus {
-	margin-left: 22%;
-}
-.product3-minus {
-	margin-left: 26.8%;
+.product1-bought-button:hover, .product2-bought-button:hover, .product3-bought-button:hover {
+	background-color: #d9d6d6;
 }
 
 .product1-count-label, .product2-count-label, .product3-count-label {
-	background: #dad9d4;
+	background: #e3e3e0;
 	padding: 5px 10px;
 	border-radius: 20%;
 }
