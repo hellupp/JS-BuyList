@@ -13,6 +13,23 @@
 		/*padding: 10px;*/
 	}
 }
+@media print {
+	#section-to-print{
+		visibility: visible;
+	}
+	#section-to-print {
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+	.bl-label {
+		visibility: hidden;
+	}
+	.bl-label-for-print {
+		/*visibility: visible;*/
+		display: block;
+	}
+}
 
 body{
 	background: #cdcbcb;
@@ -230,9 +247,12 @@ input {
 	height: 30px;
 	border-radius: 20%;
 }
+.bl-label-for-print {
+	visibility: hidden;
+}
 
-.bl-label {
-	font-size: 20px;
+.bl-label, .bl-label-for-print {
+	font-size: 25px;
 	width: 120px;
 	height: 45px;
 	text-align: left;
