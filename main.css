@@ -1,40 +1,10 @@
-* {
-	margin: 0;
-	padding: 0;
-}
 *, :after, :before {
-	box-sizing: inherit;
-}
-
-@media only screen and (max-width: 767px){
-	.bl-bought, .bl-list {
-		width: 100%;
-		margin: 0;
-		/*padding: 10px;*/
-	}
-}
-@media print {
-	#section-to-print{
-		visibility: visible;
-	}
-	#section-to-print {
-		position: absolute;
-		left: 0;
-		top: 0;
-	}
-	.bl-label {
-		visibility: hidden;
-	}
-	.bl-label-for-print {
-		/*visibility: visible;*/
-		display: block;
-	}
+	box-sizing: border-box;
 }
 
 body{
 	background: #cdcbcb;
 	font-family: Arial, serif;
-	min-width: 350px;
 }
 
 .bl-background {
@@ -61,7 +31,6 @@ body{
 }
 
 .bl-bought {
-	position: relative;
 	vertical-align: top;
 	background: white;
 	width: 20%;
@@ -117,16 +86,16 @@ body{
 	width: auto;
 }
 .bl-title {
-	font-size: 20px;
+	font-size: 19px;
 }
 
 .bl-search {
 	padding: 5px 15px 15px;
 }
 input {
-	width: 70%;
+	width: 75%;
 	font-size: 20px;
-	height: 30px;
+	height: 42px;
 	padding: 10px;
 	border-bottom-left-radius: 5px;
 	border-top-left-radius: 5px;
@@ -215,14 +184,14 @@ input {
 	position: relative;
 }
 .product1-name, .product2-name, .product3-name {
-	width: 25%;
+	width: 29%;
 	text-align: left;
 }
 .product1-count, .product2-count, .product3-count {
-	width: 30.5%;
+	width: 32%;
 }
 .product1-buttons, .product2-buttons, .product3-buttons {
-	width: 33.5%;
+	width: 35%;
 	text-align: right;
 	padding-right: 0;
 }
@@ -247,16 +216,13 @@ input {
 	height: 30px;
 	border-radius: 20%;
 }
-.bl-label-for-print {
-	visibility: hidden;
-}
 
 .bl-label, .bl-label-for-print {
 	font-size: 25px;
 	width: 120px;
 	height: 45px;
 	text-align: left;
-	padding-left: 15px;
+	padding-left: 8px;
 	font-weight: bolder;
 	line-height: 45px;
 	border-top-right-radius: 5px;
@@ -270,6 +236,15 @@ input {
 	background-color: blueviolet;
 	color: white;
 	transition: height 1.5s ease;
+}
+.bl-label-for-print {
+	visibility: hidden;
+	font-size: 11px;
+	font-weight: normal;
+	width: 165px;
+	height: 35px;
+	line-height: 35px;
+	color: black;
 }
 
 .bl-label-text-appear, .bl-label-name-appear {
@@ -297,15 +272,59 @@ input {
 }
 .bl-label:hover .bl-label-text-appear {
 	height: 15px;
-	width: 115px;
+	width: 110px;
 	background-color: #6123ec;
 	display: block;
 }
 .bl-label:hover .bl-label-name-appear{
 	height: 30px;
-	width: 115px;
+	width: 110px;
 	background-color: #6123ec;
 	display: block;
 }
 
+@media (max-width: 760px){
+	.bl-background {
+		display: block;
+	}
+	.bl-bought {
+		display: block;
+		margin-right: auto;
+		width: 100%;
+	}
+	.bl-list {
+		display: block;
+		margin-right: auto;
+		width: 100%;
+	}
+}
+@media print {
+	@media (max-width: 760px){
+		.bl-background {
+			display: block;
+		}
+		.bl-bought {
+			display: inline-block;
+			margin-right: auto;
+			width: 20%;
+		}
+		.bl-list {
+			display: inline-block;
+			margin-right: auto;
+			width: 70%;
+		}
+	}
+
+	.bl-label {
+		visibility: hidden;
+		bottom: 50px;
+		left: 50px;
+	}
+	.bl-label-for-print {
+		visibility: visible;
+		display: block;
+		color: black;
+		border: 2px solid purple;
+	}
+}
 
