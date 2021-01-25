@@ -283,6 +283,57 @@ input {
 	display: block;
 }
 
+.tooltip-text, .tooltip-text1 {
+	box-sizing: border-box;
+	content: attr(class);
+
+	width: 100px;
+	height: 25px;
+
+	position: absolute; /* Абсолютное позиционирование */
+	/*right: -50%;*/
+	left: 50%;
+	padding-top: 5px;
+	transform: translateX(-50%);
+
+	margin: auto;
+	bottom: 105%;
+
+	font-size: 12px;
+	text-align: center;
+
+	background: #6a0074;
+	color: #fff;
+
+	opacity: 0;
+	transition: 0.3s;
+
+	border-radius: 8px;
+	z-index: 1;
+}
+.tooltip-text1 {
+	/*content: attr(tooltip-text1);*/
+	width: 150px;
+}
+
+button:hover + .tooltip-text,
+button:focus + .tooltip-text,
+button:active + .tooltip-text {
+	visibility: visible;
+	opacity: 1;
+	margin-top: 20px;
+	transform: translateX(-50%);
+}
+button:hover + .tooltip-text1,
+button:focus + .tooltip-text1,
+button:active + .tooltip-text1 {
+	visibility: visible;
+	opacity: 1;
+	margin-top: 20px;
+
+}
+
+
 @media (max-width: 760px){
 	.bl-background {
 		display: block;
@@ -290,12 +341,12 @@ input {
 	.bl-bought {
 		display: block;
 		margin-right: auto;
-		width: 100%;
+		width: 96%;
 	}
 	.bl-list {
 		display: block;
 		margin-right: auto;
-		width: 100%;
+		width: 96%;
 	}
 }
 @media print {
