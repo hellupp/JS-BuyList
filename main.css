@@ -283,26 +283,23 @@ input {
 	display: block;
 }
 
-.tooltip-text, .tooltip-text1 {
+.tooltip-text, .tooltip-text1, .tooltip-text01, .tooltip-text2, .tooltip-text3 {
 	box-sizing: border-box;
 	content: attr(class);
 
 	width: 100px;
 	height: 25px;
 
-	position: absolute; /* Абсолютное позиционирование */
-	/*right: -50%;*/
-	left: 50%;
+	position: absolute;
+	/*left: 50%;*/
 	padding-top: 5px;
-	transform: translateX(-50%);
 
 	margin: auto;
 	bottom: 105%;
 
 	font-size: 12px;
 	text-align: center;
-
-	background: #6a0074;
+	background: #790fdd;
 	color: #fff;
 
 	opacity: 0;
@@ -311,9 +308,19 @@ input {
 	border-radius: 8px;
 	z-index: 1;
 }
-.tooltip-text1 {
-	/*content: attr(tooltip-text1);*/
+.tooltip-text {
+	transform: translateX(-95%);
+}
+.tooltip-text1, .tooltip-text01 {
 	width: 150px;
+	transform: translateX(-60%);
+}
+.tooltip-text2 {
+	transform: translateX(-70%);
+}
+.tooltip-text3 {
+	bottom: 87.1%;
+	transform: translateX(-130%) translateY(1%);
 }
 
 button:hover + .tooltip-text,
@@ -322,7 +329,7 @@ button:active + .tooltip-text {
 	visibility: visible;
 	opacity: 1;
 	margin-top: 20px;
-	transform: translateX(-50%);
+
 }
 button:hover + .tooltip-text1,
 button:focus + .tooltip-text1,
@@ -330,6 +337,30 @@ button:active + .tooltip-text1 {
 	visibility: visible;
 	opacity: 1;
 	margin-top: 20px;
+
+}
+button:hover + .tooltip-text01,
+button:focus + .tooltip-text01,
+button:active + .tooltip-text01 {
+	visibility: visible;
+	opacity: 1;
+	margin-top: 20px;
+
+}
+button:hover + .tooltip-text2,
+button:focus + .tooltip-text2,
+button:active + .tooltip-text2 {
+	visibility: visible;
+	opacity: 1;
+	margin-top: 20px;
+
+}
+button:hover + .tooltip-text3,
+button:focus + .tooltip-text3,
+button:active + .tooltip-text3 {
+	visibility: visible;
+	opacity: 1;
+	/*margin-top: 20px;*/
 
 }
 
@@ -348,9 +379,26 @@ button:active + .tooltip-text1 {
 		margin-right: auto;
 		width: 96%;
 	}
+	/*.tooltip-text {*/
+	/*	transform: translateX(-10%);*/
+	/*}*/
+	/*.tooltip-text1, .tooltip-text01 {*/
+	/*	width: 150px;*/
+	/*	transform: translateX(-70%);*/
+	/*}*/
+	/*.tooltip-text01 {*/
+	/*	transform: translateX(-27%);*/
+	/*}*/
+	/*.tooltip-text2 {*/
+	/*	transform: translateX(53%);*/
+	/*}*/
+	/*.tooltip-text3 {*/
+	/*	bottom: 83.1%;*/
+	/*	transform: translateX(60%);*/
+	/*}*/
 }
 @media print {
-	@media (max-width: 760px){
+	@media (max-width: 770px){
 		.bl-background {
 			display: block;
 		}
