@@ -398,7 +398,7 @@ button:active + .tooltip-text3 {
 	/*}*/
 }
 @media print {
-	@media (max-width: 770px){
+	@media (max-width: 760px){
 		.bl-background {
 			display: block;
 		}
