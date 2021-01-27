@@ -285,7 +285,7 @@ input {
 
 .tooltip-text, .tooltip-text1, .tooltip-text01, .tooltip-text2, .tooltip-text3 {
 	box-sizing: border-box;
-	content: attr(class);
+	content: attr(data-tooltip);
 
 	width: 100px;
 	height: 25px;
@@ -319,8 +319,10 @@ input {
 	transform: translateX(-70%);
 }
 .tooltip-text3 {
-	bottom: 87.1%;
-	transform: translateX(-130%) translateY(1%);
+	bottom: 0;
+	margin-top: 0;
+	top: 106px;
+	transform: translateX(-130%);
 }
 
 button:hover + .tooltip-text,
