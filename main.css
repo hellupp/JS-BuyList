@@ -362,8 +362,6 @@ button:focus + .tooltip-text3,
 button:active + .tooltip-text3 {
 	visibility: visible;
 	opacity: 1;
-	/*margin-top: 20px;*/
-
 }
 
 
@@ -381,23 +379,6 @@ button:active + .tooltip-text3 {
 		margin-right: auto;
 		width: 96%;
 	}
-	/*.tooltip-text {*/
-	/*	transform: translateX(-10%);*/
-	/*}*/
-	/*.tooltip-text1, .tooltip-text01 {*/
-	/*	width: 150px;*/
-	/*	transform: translateX(-70%);*/
-	/*}*/
-	/*.tooltip-text01 {*/
-	/*	transform: translateX(-27%);*/
-	/*}*/
-	/*.tooltip-text2 {*/
-	/*	transform: translateX(53%);*/
-	/*}*/
-	/*.tooltip-text3 {*/
-	/*	bottom: 83.1%;*/
-	/*	transform: translateX(60%);*/
-	/*}*/
 }
 @media print {
 	@media (max-width: 760px){
