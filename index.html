@@ -1,110 +1,153 @@
 <!DOCTYPE html>
 <html>
 <head lang="uk">
-	<meta charset="UTF-8">
-	<title>My Page</title>
+    <meta charset="UTF-8">
+    <title>My Page</title>
 
-
-	<link rel="stylesheet" type="text/css" href="main.css" />
+    <link rel="stylesheet" type="text/css" href="main.css"/>
 </head>
 <body>
 <div class="bl-background">
-	<div class="bl-list">
-		<div class="bl-row">
-			<div class="bl-search">
-				<input type="text" placeholder="Назва товару">
-				<button class="bl-search-button">Додати</button>
-				<span class="tooltip-text3">Додати товар</span>
-			</div>
-			<div class="line"></div>
-			<div class="bl-product1">
-				<div class="product1-name">
-					Помідори
-				</div>
-				<div class="product1-count">
-					<button class="product1-minus">-</button>
-					<span class="tooltip-text1">Зменшити на одиницю</span>
-					<span class="product1-count-label">1</span>
-					<button class="product1-plus">+</button>
-					<span class="tooltip-text01">Збільшити на одиницю</span>
-				</div>
-				<div class="product1-buttons">
-					<button class="product1-bought-button">Куплено</button>
-					<span class="tooltip-text">Товар куплено</span>
-					<button class="product1-cross">x</button>
-					<span class="tooltip-text2">Видалити товар</span>
-				</div>
-			</div>
-			<div class="line"></div>
-			<div class="bl-product2">
-				<div class="product2-name">
-					Печиво
-				</div>
-				<div class="product2-count">
-					<button class="product2-minus">-</button>
-					<span class="tooltip-text1">Зменшити на одиницю</span>
-					<span class="product2-count-label">1</span>
-					<button class="product2-plus">+</button>
-					<span class="tooltip-text01">Збільшити на одиницю</span>
-				</div>
-				<div class="product2-buttons">
-					<button class="product2-bought-button">Куплено</button>
-					<span class="tooltip-text">Товар куплено</span>
-					<button class="product2-cross">x</button>
-					<span class="tooltip-text2">Видалити товар</span>
-				</div>
-			</div>
-			<div class="line"></div>
-			<div class="bl-product3">
-				<div class="product3-name">
-					Сир
-				</div>
-				<div class="product3-count">
-					<button class="product3-minus">-</button>
-					<span class="tooltip-text1">Зменшити на одиницю</span>
-					<span class="product3-count-label">1</span>
-					<button class="product3-plus">+</button>
-					<span class="tooltip-text01">Збільшити на одиницю</span>
-				</div>
-				<div class="product3-buttons">
-					<button class="product3-bought-button">Куплено</button>
-					<span class="tooltip-text">Товар куплено</span>
-					<button class="product3-cross">x</button>
-					<span class="tooltip-text2">Видалити товар</span>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="bl-bought">
-		<div class="bl-title">Залишилося</div>
-		<div class="line"></div>
-		<div class="bl-left-products">
+    <div class="bl-list">
+        <div class="bl-row">
+            <div class="bl-search">
+                <input type="text" placeholder="Назва товару">
+                <button class="bl-search-button">Додати</button>
+                <span class="tooltip-text3">Додати товар</span>
+            </div>
+            <div class="bl-product" data-class="edit-mode">
+                <div class="product-name">
+                    Помідори
+                </div>
+                <span class="product-name-crossed">Помідори</span>
+                <div class="input-name-edit">
+                    <input type="text" placeholder="Нова назва">
+                </div>
+                <div class="product-count">
+                    <button class="product-minus">-</button>
+                    <span class="tooltip-text1">Зменшити на одиницю</span>
+                    <span class="product-count-label">1</span>
+                    <button class="product-plus">+</button>
+                    <span class="tooltip-text01">Збільшити на одиницю</span>
+                </div>
+                <div class="product-buttons">
+                    <button class="product-bought-button">Куплено</button>
+                    <button class="product-unbuy-button">Не куплено</button>
+                    <span class="tooltip-text">Товар куплено</span>
+                    <button class="product-cross">x</button>
+                    <span class="tooltip-text2">Видалити товар</span>
+                </div>
+            </div>
+            <div class="bl-product" data-class="edit-mode">
+                <div class="product-name">
+                    Печиво
+                </div>
+                <span class="product-name-crossed">Печиво</span>
+                <div class="input-name-edit">
+                    <input type="text" placeholder="Нова назва">
+                </div>
+                <div class="product-count">
+                    <button class="product-minus">-</button>
+                    <span class="tooltip-text1">Зменшити на одиницю</span>
+                    <span class="product-count-label">1</span>
+                    <button class="product-plus">+</button>
+                    <span class="tooltip-text01">Збільшити на одиницю</span>
+                </div>
+                <div class="product-buttons">
+                    <button class="product-bought-button">Куплено</button>
+                    <button class="product-unbuy-button">Не куплено</button>
+                    <span class="tooltip-text">Товар куплено</span>
+                    <button class="product-cross">x</button>
+                    <span class="tooltip-text2">Видалити товар</span>
+                </div>
+            </div>
+            <div class="bl-product" data-class="edit-mode">
+                <div class="product-name">
+                    Сир
+                </div>
+                <span class="product-name-crossed">Сир</span>
+                <div class="input-name-edit">
+                    <input type="text" placeholder="Нова назва">
+                </div>
+                <div class="product-count">
+                    <button class="product-minus">-</button>
+                    <span class="tooltip-text1">Зменшити на одиницю</span>
+                    <span class="product-count-label">1</span>
+                    <button class="product-plus">+</button>
+                    <span class="tooltip-text01">Збільшити на одиницю</span>
+                </div>
+                <div class="product-buttons">
+                    <button class="product-bought-button">Куплено</button>
+                    <button class="product-unbuy-button">Не куплено</button>
+                    <span class="tooltip-text">Товар куплено</span>
+                    <button class="product-cross">x</button>
+                    <span class="tooltip-text2">Видалити товар</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bl-bought">
+        <div class="bl-title">Залишилося</div>
+        <div class="bl-left-products">
 			<span class="left-product">
 				<span class="left-prod-title">Помідори</span>
 				<span class="left-prod-count">1</span>
 			</span>
-			<span class="left-product">
+            <span class="left-product">
 				<span class="left-prod-title">Печиво</span>
 				<span class="left-prod-count">1</span>
 			</span>
-			<span class="left-product">
+            <span class="left-product">
 				<span class="left-prod-title">Сир</span>
 				<span class="left-prod-count">1</span>
 			</span>
-		</div>
-		<div class="line"></div>
-		<div class="bl-title">Куплено</div>
-		<div class="line"></div>
-		<div class="bl-bought-products"></div>
-	</div>
-	<div class="bl-label">
-		<div class="bl-label-for-print">Created by Zasukha Dasha</div>
-		<div class="bl-label-text">Buy List
-			<div class="bl-label-text-appear">Created by:</div>
-			<div class="bl-label-name-appear">Zasukha Dasha</div>
-		</div>
-	</div>
+        </div>
+        <div class="bl-title">Куплено</div>
+        <div class="line"></div>
+        <div class="bl-bought-products"></div>
+    </div>
+    <div class="bl-label">
+        <div class="bl-label-for-print">Created by Zasukha Dasha</div>
+        <div class="bl-label-text">Buy List
+            <div class="bl-label-text-appear">Created by:</div>
+            <div class="bl-label-name-appear">Zasukha Dasha</div>
+        </div>
+    </div>
+    <div class="hidden-template">
+        <div class="bl-product" data-class="edit-mode">
+            <div class="product-name">
+                Помідори
+            </div>
+            <span class="product-name-crossed">Помідори</span>
+            <div class="input-name-edit">
+                <input type="text" placeholder="Нова назва">
+            </div>
+            <div class="product-count">
+                <button class="product-minus">-</button>
+                <span class="tooltip-text1">Зменшити на одиницю</span>
+                <span class="product-count-label">1</span>
+                <button class="product-plus">+</button>
+                <span class="tooltip-text01">Збільшити на одиницю</span>
+            </div>
+            <div class="product-buttons">
+                <button class="product-bought-button">Куплено</button>
+                <span class="tooltip-text">Товар куплено</span>
+                <button class="product-unbuy-button">Не куплено</button>
+                <span class="tooltip-text-hidden">Товар не куплено</span>
+                <button class="product-cross">x</button>
+                <span class="tooltip-text2">Видалити товар</span>
+            </div>
+        </div>
+    </div>
+    <div class="hidden-count-label-template">
+        <span class="left-product">
+				<span class="left-prod-title"></span>
+				<span class="left-prod-count">0</span>
+        </span>
+    </div>
 </div>
 
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="main.js"></script>
 </body>
 </html>
