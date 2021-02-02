@@ -20,6 +20,13 @@ $(document).ready(function () {
         decreaseAmount();
     })
 
+    $(".product-bought-button").click(function () {
+        buyProduct();
+    })
+    $(".product-unbuy-button").click(function () {
+        unbuyProduct();
+    })
+
     $(".product-cross").click(function () {
         $(ITEM_TEMPLATE).remove();
     })
@@ -42,7 +49,40 @@ $(document).ready(function () {
         node.find(".product-plus").click(function () {
             increaseAmount();
         });
+        node.find(".product-bought-button").click(function () {
+            buyProduct();
+        })
+        node.find(".product-unbuy-button").click(function () {
+            unbuyProduct();
+        })
         LIST.append(node);	//Add to the end of the list
+    }
+
+    function buyProduct() {
+        $(".product-name").hide();
+        $(".product-name-crossed").css("display", "inline-block");
+        $(".product-unbuy-button").css("display", "inline-block");
+        $(".product-bought-button").hide();
+        $(".product-cross").hide();
+        $(".product-minus").hide();
+        $(".product-plus").hide();
+        $(".tooltip-text").hide();
+        $(".product-unbuy-button").hover(function () {
+            $(".tooltip-text-hidden").css("visibility", "visible");
+            $(".tooltip-text-hidden").css("opacity", "1");
+        }, function () {
+            $(".tooltip-text-hidden").css("opacity", "0.6");
+        })
+    }
+
+    function unbuyProduct() {
+        $(".product-name-crossed").hide();
+        $(".product-name").css("display", "inline-block");
+        $(".product-bought-button").css("display", "inline-block");
+        $(".product-unbuy-button").hide();
+        $(".product-cross").css("display", "inline-block");
+        $(".product-minus").css("display", "inline-block");
+        $(".product-plus").css("display", "inline-block");
     }
 
     function decreaseAmount() {
