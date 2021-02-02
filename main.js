@@ -8,7 +8,7 @@ $(document).ready(function () {
             $("#input-search").val('').focus();
         }
     })
-    $(".bl-search-button").click(function (name) {
+    $(".bl-search-button").click(function () {
         addItem($("#input-search").val());
         $("#input-search").val('').focus();
     })
