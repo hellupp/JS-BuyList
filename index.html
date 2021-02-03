@@ -3,7 +3,8 @@
 <head lang="uk">
     <meta charset="UTF-8">
     <title>My Page</title>
-
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
     <link rel="stylesheet" type="text/css" href="main.css"/>
 </head>
 <body>
@@ -11,20 +12,17 @@
     <div class="bl-list">
         <div class="bl-row">
             <div class="bl-search">
-                <label for="input-search"></label><input id="input-search" type="text" placeholder="Назва товару">
+                <input class="input-search" type="text" placeholder="Назва товару">
                 <button class="bl-search-button">Додати</button>
                 <span class="tooltip-text3">Додати товар</span>
             </div>
-            <div data-id="product-1"  class="bl-product" data-class="edit-mode">
+            <div  class="bl-product" data-class="edit-mode" id="1bl-product">
+                <div class='id' style="display: none">1</div>
                 <div class="product-name">
                     Помідори
                 </div>
                 <span class="product-name-crossed">Помідори</span>
-                <div class="input-name-edit">
-                    <label>
-                        <input type="text" placeholder="Нова назва">
-                    </label>
-                </div>
+                <input data-id="product-1" class="input-edit" type="text">
                 <div class="product-count">
                     <button class="product-minus">-</button>
                     <span class="tooltip-text1">Зменшити на одиницю</span>
@@ -40,14 +38,13 @@
                     <span class="tooltip-text2">Видалити товар</span>
                 </div>
             </div>
-            <div data-id="product-2" class="bl-product" data-class="edit-mode">
+            <div class="bl-product" data-class="edit-mode" id="2bl-product">
+                <div class='id' style="display: none">2</div>
                 <div class="product-name">
                     Печиво
                 </div>
                 <span class="product-name-crossed">Печиво</span>
-                <div class="input-name-edit">
-                    <input type="text" placeholder="Нова назва">
-                </div>
+                <input data-id="product-2" class="input-edit" type="text">
                 <div class="product-count">
                     <button class="product-minus">-</button>
                     <span class="tooltip-text1">Зменшити на одиницю</span>
@@ -63,14 +60,13 @@
                     <span class="tooltip-text2">Видалити товар</span>
                 </div>
             </div>
-            <div data-id="product-3" class="bl-product" data-class="edit-mode">
+            <div class="bl-product" data-class="edit-mode" id="3bl-product">
+                <div class='id' style="display: none">3</div>
                 <div class="product-name">
                     Сир
                 </div>
                 <span class="product-name-crossed">Сир</span>
-                <div class="input-name-edit">
-                    <input type="text" placeholder="Нова назва">
-                </div>
+                <input class="input-edit" type="text">
                 <div class="product-count">
                     <button class="product-minus">-</button>
                     <span class="tooltip-text1">Зменшити на одиницю</span>
@@ -91,22 +87,41 @@
     <div class="bl-bought">
         <div class="bl-title">Залишилося</div>
         <div class="bl-left-products">
-			<span data-id="product-1" class="left-product">
+			<span class="left-product" id="1left-product">
+                <div class='id' style="display: none">1</div>
 				<span class="left-prod-title">Помідори</span>
 				<span class="left-prod-count">1</span>
 			</span>
-            <span data-id="product-2" class="left-product">
+            <span class="left-product" id="2left-product">
+                <div class='id' style="display: none">2</div>
 				<span class="left-prod-title">Печиво</span>
 				<span class="left-prod-count">1</span>
 			</span>
-            <span data-id="product-3" class="left-product">
+            <span class="left-product" id="3left-product">
+                <div class='id' style="display: none">3</div>
 				<span class="left-prod-title">Сир</span>
 				<span class="left-prod-count">1</span>
 			</span>
         </div>
         <div class="bl-title">Куплено</div>
         <div class="line"></div>
-        <div class="bl-bought-products"></div>
+        <div class="bl-bought-products">
+            <span class="bought-product" id="1bought-product">
+                <div class='id' style="display: none">1</div>
+				<span class="bought-prod-title">Помідори</span>
+				<span class="bought-prod-count">1</span>
+			</span>
+            <span class="bought-product" id="2bought-product">
+                <div class='id' style="display: none">2</div>
+				<span class="bought-prod-title">Печиво</span>
+				<span class="bought-prod-count">1</span>
+			</span>
+            <span class="bought-product" id="3bought-product">
+                <div class='id' style="display: none">3</div>
+				<span class="bought-prod-title">Сир</span>
+				<span class="bought-prod-count">1</span>
+			</span>
+        </div>
     </div>
     <div class="bl-label">
         <div class="bl-label-for-print">Created by Zasukha Dasha</div>
@@ -116,14 +131,13 @@
         </div>
     </div>
     <div class="hidden-template">
-        <div data-id class="bl-product" data-class="edit-mode">
+        <div class="bl-product" data-class="edit-mode">
+            <div class='id' style="display: none">1</div>
             <div class="product-name">
                 Помідори
             </div>
             <span class="product-name-crossed">Помідори</span>
-            <div class="input-name-edit">
-                <input type="text" placeholder="Нова назва">
-            </div>
+            <input data-id class="input-edit" type="text">
             <div class="product-count">
                 <button class="product-minus">-</button>
                 <span class="tooltip-text1">Зменшити на одиницю</span>
@@ -143,13 +157,18 @@
     </div>
     <div class="hidden-count-label-template">
         <span class="left-product">
-				<span class="left-prod-title"></span>
-				<span class="left-prod-count">1</span>
+            <div class='id' style="display: none">1</div>
+            <span class="left-prod-title"></span>
+            <span class="left-prod-count">1</span>
+        </span>
+    </div>
+    <div class="hidden-bought-label-template">
+        <span class="bought-product">
+            <div class='id' style="display: none">1</div>
+            <span class="bought-prod-title"></span>
+            <span class="bought-prod-count">1</span>
         </span>
     </div>
 </div>
-
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script type="text/javascript" src="main.js"></script>
 </body>
 </html>

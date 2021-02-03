@@ -48,7 +48,7 @@ body {
     border-bottom: 1px solid #deddd8;
 }
 
-.left-product {
+.left-product, .bought-product {
     display: inline-block;
     background-color: #e9e9e9;
     margin-bottom: 3px;
@@ -59,7 +59,7 @@ body {
     border-top: 1px solid #e9e9e9;
 }
 
-.left-prod-count {
+.left-prod-count, .bought-prod-count {
     display: inline-block;
     text-align: center;
     vertical-align: center;
@@ -69,6 +69,12 @@ body {
     height: 20px;
     border-radius: 50%;
     line-height: 20px;
+}
+.bought-prod-count, .bought-prod-title {
+    text-decoration: line-through;
+}
+.bought-product {
+    display: none;
 }
 
 .bl-product {
@@ -90,7 +96,7 @@ body {
     padding: 5px 15px 15px;
 }
 
-input {
+.input-search {
     width: 75%;
     font-size: 20px;
     height: 42px;
@@ -184,15 +190,6 @@ input {
     position: relative;
 }
 
-.input-name-edit.input {
-    width: 20%;
-    height: 10px;
-    padding: 0 10px;
-    font-size: 10px;
-    position: relative;
-    border: 1px solid #deddd8;
-    border-radius: 5px;
-}
 .product-name, .product-name-crossed {
     width: 29%;
     text-align: left;
@@ -206,6 +203,19 @@ input {
     width: 35%;
     text-align: right;
     padding-right: 0;
+}
+
+.input-edit {
+    display: inline-block;
+    text-align: left;
+    width: 28%;
+    height: 25px;
+    padding: 0 10px;
+    font-size: 10px;
+    position: relative;
+    border: 1px solid #deddd8;
+    border-radius: 5px;
+    margin-left: 10px;
 }
 
 .product-bought-button, .product-unbuy-button {
@@ -233,7 +243,7 @@ input {
     border-radius: 20%;
 }
 
-.hidden-count-label-template, .hidden-template, .product-name-crossed, .product-unbuy-button, .tooltip-text-hidden, .input-name-edit{
+.hidden-count-label-template, .hidden-template, .product-name-crossed, .product-unbuy-button, .tooltip-text-hidden, .input-edit{
     display: none;
 }
 
