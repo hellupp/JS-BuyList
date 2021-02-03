@@ -7,81 +7,17 @@ var ITEM_BOUGHT = $(".hidden-bought-label-template").html();
 
 var ID = 4;
 
-$(document).ready(function () {
-    $("#input-search").bind('keypress', function (e) {
-        if (e.keyCode === 13) {
-            addItem($("#input-search").val());
-            $("#input-search").val('').focus();
-        }
-    })
-    $(".bl-search-button").click(function () {
-        addItem($("#input-search").val());
-        $("#input-search").val('').focus();
-    })
-
-    $(".product-plus").click(function () {
-        increaseAmount(this);
-    })
-    $(".product-minus").click(function () {
-        decreaseAmount(this);
-    })
-
-    $(".product-bought-button").click(function () {
-        buyProduct(this);
-    })
-    $(".product-unbuy-button").click(function () {
-        unbuyProduct(this);
-    })
-
-    $(".product-cross").click(function () {
-        delProduct(this);
-    })
-
-    $(".product-name").click(function () {
-        $(this).hide();
-        var content =  $(".product-name").html();
-        // $('.input-edit#' + $(this).data($(this.dataset.id))).css("display", "inline-block");
-        // $(`.input-edit[data-id="${this.dataset.id}"]`).css("display", "inline-block");
-        $(".input-edit").css("display", "inline-block");
-        $(".input-edit").val(content).focus();
-    })
-
-
-    function addItem(title) {
-        // var node = $(ITEM_TEMPLATE);
-        // var nodeCounter = $(ITEM_COUNTER) //Create new HTML node
-        // node.find(".product-name").text(title);	//Set product title
-        // //Delete Action
-        // node.find(".product-cross").click(function () {
-        //     node.remove();
-        //     nodeCounter.remove();
-        // });
-        // node.find(".product-minus").click(function () {
-        //     decreaseAmount(this);
-        // });
-        // node.find(".product-plus").click(function () {
-        //     increaseAmount(this);
-        // });
-        // node.find(".product-bought-button").click(function () {
-        //     buyProduct(this);
-        // })
-        // node.find(".product-unbuy-button").click(function () {
-        //     unbuyProduct(this);
-        // })
-        // LIST.append(node);	//Add to the end of the list
-        //
-        // nodeCounter.find(".left-prod-title").html(title);
-        // nodeCounter.css("margin-right", "5px");
-        // LIST_COUNTERS.append(nodeCounter);
-
-        var product = $(ITEM_TEMPLATE);
-        var productCounter = $(ITEM_COUNTER);
-        var productBought = $(ITEM_BOUGHT);
-        if (title !== ''){
+    function addItem() {
+        var product = $(ITEM_TEMPLATE).clone();
+        var productCounter = $(ITEM_COUNTER).clone();
+        var productBought = $(ITEM_BOUGHT).clone();
+        var title = $(".input-search").val();
+        if (title !== '') {
             product.find('.product-name').text(title);
             product.find('.product-count-label').text(1);
-            product.find('.product-minus').css('opacity', 0.4);
+            product.find('.product-minus').css('opacity', 0.6);
             product.find('.product-minus').attr("disabled", false);
+            product.find(".product-name-crossed").text(title);
             product.find('.id').text(ID);
             productCounter.find('.id').text(ID);
             productCounter.find('.left-prod-title').text(title);
@@ -89,11 +25,22 @@ $(document).ready(function () {
             productBought.find('.id').text(ID);
             productBought.find('.bought-prod-title').text(title);
             productBought.find('.bought-prod-count').text(1);
-            LIST.append("<div class='bl-product' id='"+ID+"bl-product'>"+product.html()+"</div>");
-            LIST_COUNTERS.append("<span class='left-product' id='"+ID+"left-product' style='margin-right: 5px'>"+productCounter.html()+"</div>");
-            LIST_BOUGHT.append("<span class='bought-product' id='"+ID+"bought-product' style='display: none; margin-right: 5px'>"+productBought.html()+"</div>");
+            LIST.append("<div class='bl-product' id='" + ID + "bl-product'>" + product.html() + "</div>");
+            LIST_COUNTERS.append("<span class='left-product' id='" + ID + "left-product' style='margin-right: 5px'>" + productCounter.html() + "</span>");
+            LIST_BOUGHT.append("<span class='bought-product' id='" + ID + "bought-product' style='display: none; margin-right: 5px'>" + productBought.html() + "</span>");
         }
         ID += 1;
+        $(".input-search").val('').focus();
+    }
+
+    document.addEventListener("keyup", function(e) {
+        if (e.code === 'Enter' && ($(".input-search").val()) !== "") {
+            addItem();
+        }
+    });
+
+    function editName(object) {
+
     }
 
     function delProduct(object) {
@@ -143,29 +90,28 @@ $(document).ready(function () {
         var content1 =  parseInt($('#'+_id+'bl-product').find('.product-count-label').text());
         var content2 =  parseInt($('#'+_id+'left-product').find('.left-prod-count').text());
         var content3 =  parseInt($('#'+_id+'bought-product').find('.bought-prod-count').text());
-        content1 -= 1;
-        content2 -= 1;
-        content3 -= 1;
-        if (content1 <= 1) {
-            $('#'+_id+'bl-product').find('.product-count-label').html(1);
-            $('#'+_id+'left-product').find('.left-prod-count').html(1);
-            $('#'+_id+'bought-product').find('.bought-prod-count').html(1);
-            $(object).css("cursor", "");
-            $(object).css("opacity", "0.6");
-            $(object).css("transition-duration", "0");
-            // $(object).css("disabled", "true");
+        // content1 -= 1;
+        // content2 -= 1;
+        // content3 -= 1;
+        if (content1 > 1) {
+            $('#'+_id+'bl-product').find('.product-count-label').html(--content1);
+            $('#'+_id+'left-product').find('.left-prod-count').html(--content2);
+            $('#'+_id+'bought-product').find('.bought-prod-count').html(--content3);
+            $(object).css("cursor", "pointer");
+            $(object).css("opacity", 1);
+            $(object).css("disabled", false);
             $(object).hover(function () {
                 $(object).css("background-color", "#ec4831");
                 $(object).css("box-shadow", "0 -3px 0 0", "#dd3e1b", "inset");
             }, function () {
-                $(object).css("background-color", "#ec4831");
-                $(object).css("box-shadow", "0 -3px 0 0", "#dd3e1b", "inset");
+                $(this).css("background-color", "#ff5c4f");
+                $(this).css("box-shadow", "0 -3px 0 0", "#d75347", "inset");
             })
         }
-        else{
-            $('#'+_id+'bl-product').find('.product-count-label').html(content1);
-            $('#'+_id+'left-product').find('.left-prod-count').html(content2);
-            $('#'+_id+'bought-product').find('.bought-prod-count').html(content3);
+        if (content1 <= 1){
+            $(object).css("cursor", "");
+            $(object).css("opacity", 0.6);
+            $(object).css("disabled", true);
         }
     }
 
@@ -178,17 +124,15 @@ $(document).ready(function () {
         $('#'+_id+'left-product').find('.left-prod-count').html(++content2);
         $('#'+_id+'bought-product').find('.bought-prod-count').html(++content3);
         if (content1 > 1){
-            $(object).css("cursor", "pointer");
-            $(object).css("opacity", "1");
-            $(object).css("transition-duration", "0.4s");
-            // $(object).css("disabled", "false");
-            $(('#'+_id+'bl-product').find('.product-minus')).hover(function () {
+            $('#'+_id+'bl-product').find('.product-minus').css("cursor", "pointer");
+            $('#'+_id+'bl-product').find('.product-minus').css("opacity", 1);
+            $('#'+_id+'bl-product').find('.product-minus').css("disabled", false);
+            $('#'+_id+'bl-product').find('.product-minus').hover(function () {
                 $(this).css("background-color", "#ec4831");
                 $(this).css("box-shadow", "0 -3px 0 0", "#dd3e1b", "inset");
             }, function () {
                 $(this).css("background-color", "#ff5c4f");
                 $(this).css("box-shadow", "0 -3px 0 0", "#d75347", "inset");
-            })
+            });
         }
     }
-});
