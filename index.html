@@ -13,72 +13,53 @@
             <div class="bl-search">
                 <input class="input-search" type="text" placeholder="Назва товару">
                 <button class="bl-search-button" data-tooltip="Додати товар" onclick="addItem()">Додати</button>
-<!--                <span class="tooltip-text3">Додати товар</span>-->
             </div>
             <div  class="bl-product" id="1bl-product">
                 <div class='id' style="display: none">1</div>
-                <div class="product-name" onclick="editName(this)">
-                    Помідори
-                </div>
+                <div class="product-name" onclick="editName(this)">Помідори</div>
                 <span class="product-name-crossed">Помідори</span>
-                <input data-id="product-1" class="input-edit" type="text">
+                <input class="input-edit" type="text" oninput="dynamicEdit(this)">
                 <div class="product-count">
                     <button class="product-minus" data-tooltip="Зменшити на одиницю" onclick="decreaseAmount(this)">-</button>
-<!--                    <span class="tooltip-text1">Зменшити на одиницю</span>-->
                     <span class="product-count-label">1</span>
                     <button class="product-plus" data-tooltip="Збільшити на одиницю" onclick="increaseAmount(this)">+</button>
-<!--                    <span class="tooltip-text01">Збільшити на одиницю</span>-->
                 </div>
                 <div class="product-buttons">
                     <button class="product-bought-button" data-tooltip="Товар куплено" onclick="buyProduct(this)">Куплено</button>
                     <button class="product-unbuy-button" data-tooltip="Товар не куплено" onclick="unbuyProduct(this)">Не куплено</button>
-<!--                    <span class="tooltip-text">Товар куплено</span>-->
                     <button class="product-cross" data-tooltip="Видалити товар" onclick="delProduct(this)">x</button>
-<!--                    <span class="tooltip-text2">Видалити товар</span>-->
                 </div>
             </div>
             <div class="bl-product" id="2bl-product">
                 <div class='id' style="display: none">2</div>
-                <div class="product-name" onclick="editName(this)">
-                    Печиво
-                </div>
+                <div class="product-name" onclick="editName(this)">Печиво</div>
                 <span class="product-name-crossed">Печиво</span>
-                <input data-id="product-2" class="input-edit" type="text">
+                <input class="input-edit" type="text" oninput="dynamicEdit(this)">
                 <div class="product-count">
                     <button class="product-minus" data-tooltip="Зменшити на одиницю" onclick="decreaseAmount(this)">-</button>
-<!--                    <span class="tooltip-text1">Зменшити на одиницю</span>-->
                     <span class="product-count-label">1</span>
                     <button class="product-plus" data-tooltip="Збільшити на одиницю" onclick="increaseAmount(this)">+</button>
-<!--                    <span class="tooltip-text01">Збільшити на одиницю</span>-->
                 </div>
                 <div class="product-buttons">
                     <button class="product-bought-button" data-tooltip="Товар куплено" onclick="buyProduct(this)">Куплено</button>
                     <button class="product-unbuy-button" data-tooltip="Товар не куплено" onclick="unbuyProduct(this)">Не куплено</button>
-<!--                    <span class="tooltip-text">Товар куплено</span>-->
                     <button class="product-cross" data-tooltip="Видалити товар" onclick="delProduct(this)">x</button>
-<!--                    <span class="tooltip-text2">Видалити товар</span>-->
                 </div>
             </div>
             <div class="bl-product" id="3bl-product">
                 <div class='id' style="display: none">3</div>
-                <div class="product-name" onclick="editName(this)">
-                    Сир
-                </div>
+                <div class="product-name" onclick="editName(this)">Сир</div>
                 <span class="product-name-crossed">Сир</span>
-                <input class="input-edit" type="text">
+                <input class="input-edit" type="text" oninput="dynamicEdit(this)">
                 <div class="product-count">
                     <button class="product-minus" data-tooltip="Зменшити на одиницю" onclick="decreaseAmount(this)">-</button>
-<!--                    <span class="tooltip-text1">Зменшити на одиницю</span>-->
                     <span class="product-count-label">1</span>
                     <button class="product-plus" data-tooltip="Збільшити на одиницю" onclick="increaseAmount(this)">+</button>
-<!--                    <span class="tooltip-text01">Збільшити на одиницю</span>-->
                 </div>
                 <div class="product-buttons">
                     <button class="product-bought-button" data-tooltip="Товар куплено" onclick="buyProduct(this)">Куплено</button>
                     <button class="product-unbuy-button" data-tooltip="Товар не куплено" onclick="unbuyProduct(this)">Не куплено</button>
-<!--                    <span class="tooltip-text">Товар куплено</span>-->
                     <button class="product-cross" data-tooltip="Видалити товар" onclick="delProduct(this)">x</button>
-<!--                    <span class="tooltip-text2">Видалити товар</span>-->
                 </div>
             </div>
         </div>
@@ -132,25 +113,18 @@
     <div class="hidden-template">
         <div class="bl-product">
             <div class='id' style="display: none">1</div>
-            <div class="product-name" onclick="editName(this)">
-                Помідори
-            </div>
+            <div class="product-name" onclick="editName(this)">Помідори</div>
             <span class="product-name-crossed">Помідори</span>
-            <input data-id class="input-edit" type="text">
+            <input class="input-edit" type="text" oninput="dynamicEdit(this)">
             <div class="product-count">
                 <button class="product-minus" data-tooltip="Зменшити на одиницю" onclick="decreaseAmount(this)">-</button>
-<!--                <span class="tooltip-text1">Зменшити на одиницю</span>-->
                 <span class="product-count-label">1</span>
                 <button class="product-plus" data-tooltip="Збільшити на одиницю" onclick="increaseAmount(this)">+</button>
-<!--                <span class="tooltip-text01">Збільшити на одиницю</span>-->
             </div>
             <div class="product-buttons">
                 <button class="product-bought-button" data-tooltip="Товар куплено" onclick="buyProduct(this)">Куплено</button>
-<!--                <span class="tooltip-text">Товар куплено</span>-->
                 <button class="product-unbuy-button" data-tooltip="Товар не куплено" onclick="unbuyProduct(this)">Не куплено</button>
-<!--                <span class="tooltip-text-hidden">Товар не куплено</span>-->
                 <button class="product-cross" data-tooltip="Видалити товар" onclick="delProduct(this)">x</button>
-<!--                <span class="tooltip-text2">Видалити товар</span>-->
             </div>
         </div>
     </div>

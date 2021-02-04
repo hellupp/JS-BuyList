@@ -39,8 +39,30 @@ var ID = 4;
         }
     });
 
-    function editName(object) {
+    function dynamicEdit(object) {
+        var _id = $(object).parent().find('.id').text();
+        var newContent = $('#'+_id+'bl-product').find(".input-edit").val();
+        $('#'+_id+'left-product').find(".left-prod-title").text(newContent);
+    }
 
+    function editName(object) {
+        var _id = $(object).parent().find('.id').text();
+        var content =  $('#'+_id+'bl-product').find(".product-name").text();
+        $(object).hide();
+        $('#'+_id+'bl-product').find(".input-edit").css("display", "inline-block");
+        $('#'+_id+'bl-product').find(".input-edit").val(content).focus();
+        // $('#'+_id+'bl-product').find(".product-name").innerHTML = $('#'+_id+'bl-product').find(".product-name").text() + newContent;
+        $('#'+_id+'bl-product').find(".input-edit").blur(function () {
+            var newContent = $('#'+_id+'bl-product').find(".input-edit").val();
+            if (newContent !== ''){
+                $('#'+_id+'bl-product').find(".product-name").text(newContent);
+                $('#'+_id+'bl-product').find(".product-name-crossed").text(newContent);
+                $('#'+_id+'left-product').find(".left-prod-title").text(newContent);
+                $('#'+_id+'bought-product').find(".bought-prod-title").text(newContent);
+            }
+            $('#'+_id+'bl-product').find(".input-edit").hide();
+            $(object).css("display", "inline-block");
+        });
     }
 
     function delProduct(object) {
