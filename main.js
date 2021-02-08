@@ -43,6 +43,8 @@ var ID = 4;
         var _id = $(object).parent().find('.id').text();
         var newContent = $('#'+_id+'bl-product').find(".input-edit").val();
         $('#'+_id+'left-product').find(".left-prod-title").text(newContent);
+        if(newContent === '')
+            $('#'+_id+'left-product').find(".left-prod-title").text($('#'+_id+'bl-product').find(".product-name").text());
     }
 
     function editName(object) {
